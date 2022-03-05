@@ -31,6 +31,7 @@ namespace Telegrom
         {
             this.btnAccManager = new System.Windows.Forms.Button();
             this.btnSpammer = new System.Windows.Forms.Button();
+            this.btnParser = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAccManager
@@ -53,12 +54,25 @@ namespace Telegrom
             this.btnSpammer.UseVisualStyleBackColor = true;
             this.btnSpammer.Click += new System.EventHandler(this.btnSpammer_Click);
             // 
+            // btnParser
+            // 
+            this.btnParser.Location = new System.Drawing.Point(12, 132);
+            this.btnParser.Name = "btnParser";
+            this.btnParser.Size = new System.Drawing.Size(260, 54);
+            this.btnParser.TabIndex = 1;
+            this.btnParser.Text = "PARSER";
+            this.btnParser.UseVisualStyleBackColor = true;
+            this.btnParser.Click += new System.EventHandler(this.btnParser_Click);
+            // 
             // TelegromForm
             // 
-            this.ClientSize = new System.Drawing.Size(284, 140);
+            this.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.ClientSize = new System.Drawing.Size(284, 197);
+            this.Controls.Add(this.btnParser);
             this.Controls.Add(this.btnSpammer);
             this.Controls.Add(this.btnAccManager);
             this.Name = "TelegromForm";
+            this.Text = "TGrom";
             this.ResumeLayout(false);
 
         }
@@ -67,6 +81,7 @@ namespace Telegrom
 
         private System.Windows.Forms.Button btnAccManager;
         private System.Windows.Forms.Button btnSpammer;
+        private System.Windows.Forms.Button btnParser;
     }
 }
 

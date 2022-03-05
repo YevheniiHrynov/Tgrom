@@ -31,5 +31,11 @@ namespace Telegrom
             new SpammerForm(this).Show();
             base.Hide();
         }
+
+        private void btnParser_Click(object sender, EventArgs e)
+        {
+            new ParserForm(this).Show();
+            base.Hide();
+        }
     }
 }

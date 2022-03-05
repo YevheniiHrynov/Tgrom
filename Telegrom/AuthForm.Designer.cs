@@ -31,9 +31,11 @@ namespace Telegrom
         {
             this.components = new System.ComponentModel.Container();
             this.panelAcctiveAcc = new System.Windows.Forms.Panel();
+            this.lblActivePhone = new System.Windows.Forms.Label();
             this.lblActiveTxt = new System.Windows.Forms.Label();
             this.panelChanged = new System.Windows.Forms.Panel();
-            this.lvlChangedTxt = new System.Windows.Forms.Label();
+            this.lblChangedPhone = new System.Windows.Forms.Label();
+            this.lvlSelectedTxt = new System.Windows.Forms.Label();
             this.listAcc = new System.Windows.Forms.ListBox();
             this.phoneBox = new System.Windows.Forms.GroupBox();
             this.inputPhone = new System.Windows.Forms.TextBox();
@@ -44,8 +46,6 @@ namespace Telegrom
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnActivate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.lblActivePhone = new System.Windows.Forms.Label();
-            this.lblChangedPhone = new System.Windows.Forms.Label();
             this.tick = new System.Windows.Forms.Timer(this.components);
             this.panelAcctiveAcc.SuspendLayout();
             this.panelChanged.SuspendLayout();
@@ -63,6 +63,15 @@ namespace Telegrom
             this.panelAcctiveAcc.Size = new System.Drawing.Size(203, 81);
             this.panelAcctiveAcc.TabIndex = 0;
             // 
+            // lblActivePhone
+            // 
+            this.lblActivePhone.AutoSize = true;
+            this.lblActivePhone.Location = new System.Drawing.Point(58, 13);
+            this.lblActivePhone.Name = "lblActivePhone";
+            this.lblActivePhone.Size = new System.Drawing.Size(16, 13);
+            this.lblActivePhone.TabIndex = 0;
+            this.lblActivePhone.Text = "---";
+            // 
             // lblActiveTxt
             // 
             this.lblActiveTxt.AutoSize = true;
@@ -76,20 +85,29 @@ namespace Telegrom
             // 
             this.panelChanged.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panelChanged.Controls.Add(this.lblChangedPhone);
-            this.panelChanged.Controls.Add(this.lvlChangedTxt);
+            this.panelChanged.Controls.Add(this.lvlSelectedTxt);
             this.panelChanged.Location = new System.Drawing.Point(13, 100);
             this.panelChanged.Name = "panelChanged";
             this.panelChanged.Size = new System.Drawing.Size(203, 81);
             this.panelChanged.TabIndex = 0;
             // 
-            // lvlChangedTxt
+            // lblChangedPhone
             // 
-            this.lvlChangedTxt.AutoSize = true;
-            this.lvlChangedTxt.Location = new System.Drawing.Point(14, 14);
-            this.lvlChangedTxt.Name = "lvlChangedTxt";
-            this.lvlChangedTxt.Size = new System.Drawing.Size(63, 13);
-            this.lvlChangedTxt.TabIndex = 0;
-            this.lvlChangedTxt.Text = "CHANGED:";
+            this.lblChangedPhone.AutoSize = true;
+            this.lblChangedPhone.Location = new System.Drawing.Point(86, 14);
+            this.lblChangedPhone.Name = "lblChangedPhone";
+            this.lblChangedPhone.Size = new System.Drawing.Size(16, 13);
+            this.lblChangedPhone.TabIndex = 0;
+            this.lblChangedPhone.Text = "---";
+            // 
+            // lvlSelectedTxt
+            // 
+            this.lvlSelectedTxt.AutoSize = true;
+            this.lvlSelectedTxt.Location = new System.Drawing.Point(14, 14);
+            this.lvlSelectedTxt.Name = "lvlSelectedTxt";
+            this.lvlSelectedTxt.Size = new System.Drawing.Size(66, 13);
+            this.lvlSelectedTxt.TabIndex = 0;
+            this.lvlSelectedTxt.Text = "SELECTED:";
             // 
             // listAcc
             // 
@@ -186,24 +204,6 @@ namespace Telegrom
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // lblActivePhone
-            // 
-            this.lblActivePhone.AutoSize = true;
-            this.lblActivePhone.Location = new System.Drawing.Point(58, 13);
-            this.lblActivePhone.Name = "lblActivePhone";
-            this.lblActivePhone.Size = new System.Drawing.Size(16, 13);
-            this.lblActivePhone.TabIndex = 0;
-            this.lblActivePhone.Text = "---";
-            // 
-            // lblChangedPhone
-            // 
-            this.lblChangedPhone.AutoSize = true;
-            this.lblChangedPhone.Location = new System.Drawing.Point(74, 14);
-            this.lblChangedPhone.Name = "lblChangedPhone";
-            this.lblChangedPhone.Size = new System.Drawing.Size(16, 13);
-            this.lblChangedPhone.TabIndex = 0;
-            this.lblChangedPhone.Text = "---";
-            // 
             // tick
             // 
             this.tick.Interval = 1000;
@@ -242,7 +242,7 @@ namespace Telegrom
         private System.Windows.Forms.Panel panelAcctiveAcc;
         private System.Windows.Forms.Label lblActiveTxt;
         private System.Windows.Forms.Panel panelChanged;
-        private System.Windows.Forms.Label lvlChangedTxt;
+        private System.Windows.Forms.Label lvlSelectedTxt;
         private System.Windows.Forms.ListBox listAcc;
         private System.Windows.Forms.GroupBox phoneBox;
         private System.Windows.Forms.TextBox inputPhone;

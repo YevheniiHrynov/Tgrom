@@ -73,7 +73,7 @@ namespace Telegrom
             this.browser.FindElement(By.ClassName("input-field-phone"))?.FindElement(By.TagName("div")).SendKeys(Keys.Backspace);
             this.browser.FindElement(By.ClassName("input-field-phone"))?.FindElement(By.TagName("div")).SendKeys(Keys.Backspace);
             this.browser.FindElement(By.ClassName("input-field-phone"))?.FindElement(By.TagName("div")).SendKeys(p);
-            this.browser.FindElement(By.XPath("//*[contains(text(), 'Next')]"))?.FindElement(By.XPath("./..")).Click();
+            this.browser.FindElement(By.ClassName("input-field-phone"))?.FindElement(By.TagName("div")).SendKeys(Keys.Enter);
         }
 
         public string ActivePhone { get; set; }

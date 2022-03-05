@@ -3,6 +3,7 @@ using System;
 using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
+using TL;
 
 namespace Telegrom
 {
@@ -80,17 +81,45 @@ namespace Telegrom
             }
         }
 
+        static string Config(string what)
+        {
+            switch (what)
+            {
+                case "api_id": return "9243364";
+                case "api_hash": return "5e1d44ce28e3193b2751755ef8031341";
+                case "phone_number": return "+380507750819";
+                case "verification_code": Console.Write("Code: "); return Console.ReadLine();
+                //case "first_name": return "John";      // if sign-up is required
+                //case "last_name": return "Doe";        // if sign-up is required
+                //case "password": return "secret!";     // if user has enabled 2FA
+                default: return null;                  // let WTelegramClient decide the default config
+            }
+        }
+
         private void btnSend_Click(object sender, EventArgs e)
         {
+            //try
+            //{
+            //    var client = new WTelegram.Client(Config);
+            //    var my = client.LoginUserIfNeeded().Result;
+            //    var d = my.access_hash;
+            //    ;
+            //}
+            //catch (Exception)
+            //{
+
+            //}
+
+
             if (this.model.Browser.Url != "https://web.telegram.org/k/")
             {
                 this.btnSend.Enabled = false;
                 this.inputPhone.Enabled = false;
             }
-            else if (this.inputPhone.Text.Length != 12)
-            {
-                MessageBox.Show("Incorrect number!!!");
-            }
+            //else if (this.inputPhone.Text.Length != 12)
+            //{
+            //    MessageBox.Show("Incorrect number!!!");
+            //}
             else
             {
                 this.model.AccountManager.SetPhone(this.inputPhone.Text);

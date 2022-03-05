@@ -75,6 +75,7 @@ namespace Telegrom
             this.btnLoadLogins.TabIndex = 1;
             this.btnLoadLogins.Text = "LOAD";
             this.btnLoadLogins.UseVisualStyleBackColor = true;
+            this.btnLoadLogins.Click += new System.EventHandler(this.btnLoadLogins_Click);
             // 
             // btnSaveLogs
             // 
@@ -101,6 +102,7 @@ namespace Telegrom
             this.btnStartSpam.TabIndex = 1;
             this.btnStartSpam.Text = "START SPAM";
             this.btnStartSpam.UseVisualStyleBackColor = true;
+            this.btnStartSpam.Click += new System.EventHandler(this.btnStartSpam_Click);
             // 
             // btnStopSpam
             // 
