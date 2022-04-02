@@ -68,7 +68,8 @@ namespace Telegrom
                 var existFiles = File.ReadAllLines(existTelegramPhonesFile);
                 var withoutTelFiles = File.ReadAllLines(withoutTelegramPhonesFile);
 
-                loadPhones = File.ReadAllLines(path).Except(existFiles).Except(withoutTelFiles).Distinct().ToList();
+                loadPhones = File.ReadAllLines(path).Select(i => i.Split('\t')[0]).ToList();
+                loadPhones = loadPhones.Except(existFiles).Except(withoutTelFiles).Distinct().ToList();
 
                 lblLost.Text = $"Lost: {loadPhones.Count}";
                 btnStart.Enabled = true;

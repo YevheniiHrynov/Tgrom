@@ -25,7 +25,7 @@ namespace Telegrom
             this.FillAccList();
             if (this.model.AccountManager.ActivePhone != null)
             {
-                this.lblActivePhone.Text = "+380" + this.model.AccountManager.ActivePhone;
+                this.lblActivePhone.Text = "+" + this.model.AccountManager.ActivePhone;
             }
             else
             {
@@ -40,9 +40,9 @@ namespace Telegrom
 
         private void btnActivate_Click(object sender, EventArgs e)
         {
-            this.model.AccountManager.LogIn(this.lblChangedPhone.Text.Substring(4));
-            this.model.AccountManager.ActivePhone = this.lblChangedPhone.Text.Substring(4);
-            this.lblActivePhone.Text = "+380" + this.model.AccountManager.ActivePhone;
+            this.model.AccountManager.LogIn(this.lblChangedPhone.Text.Substring(1));
+            this.model.AccountManager.ActivePhone = this.lblChangedPhone.Text.Substring(1);
+            this.lblActivePhone.Text = "+" + this.model.AccountManager.ActivePhone;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -62,7 +62,7 @@ namespace Telegrom
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            this.model.AccountManager.DelAcc(this.lblChangedPhone.Text.Substring(4));
+            this.model.AccountManager.DelAcc(this.lblChangedPhone.Text.Substring(1));
             this.lblChangedPhone.Text = "";
             this.listAcc.Items.Clear();
             this.FillAccList();
@@ -132,7 +132,7 @@ namespace Telegrom
         {
             for (int i = 0; i < this.model.Accounts.Count; i++)
             {
-                this.listAcc.Items.Add("+380" + this.model.Accounts[i].ToString());
+                this.listAcc.Items.Add("+" + this.model.Accounts[i].ToString());
             }
         }
 
